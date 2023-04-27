@@ -10,7 +10,14 @@ export interface TodoItemProps {
 export default function TodoItem(props: TodoItemProps) {
   const { todo, handleDelete, handleUpdate } = props;
   const inputRef = useRef<HTMLInputElement>(null);
-  const [isEditMode, SetIsEditMode] = useState<boolean>(false);
+  const [isEditMode, setIsEditMode] = useState<boolean>(false);
+
+  const updateTodoHandler = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    handleUpdate({ ...todo, todo: inputRef.current ? inputRef.current.value : todo.todo });
+    setIsEditMode(false);
+  };
+
   return (
     <li className="flex w-full h-12 bg-bright my-2 p-3 items-center">
       <input
@@ -25,7 +32,7 @@ export default function TodoItem(props: TodoItemProps) {
         <div className="flex w-full justify-between">
           <span className="ml-2 whitespace-nowrap text-ellipsis overflow-hidden w-80">{todo.todo}</span>
           <div>
-            <button type="button" data-testid="modify-button" className="" onClick={() => SetIsEditMode(true)}>
+            <button type="button" data-testid="modify-button" className="" onClick={() => setIsEditMode(true)}>
               수정
             </button>
             <button
@@ -40,7 +47,7 @@ export default function TodoItem(props: TodoItemProps) {
           </div>
         </div>
       ) : (
-        <form className="flex w-full justify-between">
+        <form className="flex w-full justify-between" onSubmit={updateTodoHandler}>
           <input
             data-testid="modify-input"
             defaultValue={todo.todo}
@@ -48,13 +55,10 @@ export default function TodoItem(props: TodoItemProps) {
             className="ml-2 text-primary py-1"
           />
           <div>
-            <button
-              type="submit"
-              data-testid="submit-button"
-              onClick={() => handleUpdate({ ...todo, todo: inputRef.current ? inputRef.current.value : todo.todo })}>
+            <button type="submit" data-testid="submit-button">
               제출
             </button>
-            <button type="button" data-testid="cancel-button" onClick={() => SetIsEditMode(false)} className="ml-2">
+            <button type="button" data-testid="cancel-button" onClick={() => setIsEditMode(false)} className="ml-2">
               취소
             </button>
           </div>

@@ -7,6 +7,7 @@ const SignUp = lazy(() => import('@pages/SignUp'));
 const Todo = lazy(() => import('@pages/Todo'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
+
 export const routes = [
   {
     path: '/',

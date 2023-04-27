@@ -7,7 +7,7 @@
       "@api/*": ["src/api/*"],
       "@hooks/*": ["src/hooks/*"],
       "@hoc/*": ["src/hoc/*"],
-      "@types/*": ["src/types/*"],
+      "@type/*": ["src/types/*"],
       "@utils/*": ["src/utils/*"]
     }
   }

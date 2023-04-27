@@ -1,12 +1,13 @@
 import React from 'react';
-import './App.css';
-import Test from './components/aaa/test';
+import Api from '@api/test';
+import Test from '@components/aaa/test';
 
 function App() {
   return (
     <div className="App">
-      <Test />
       <header className="App-header">
+        <Api />
+        <Test />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>

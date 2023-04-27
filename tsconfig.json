@@ -26,5 +26,5 @@
       "@utils/*": ["src/utils/*"]
     }
   },
-  "include": ["src"]
+  "include": ["src", "tsconfig.paths.json", "commitlint.config.js"]
 }

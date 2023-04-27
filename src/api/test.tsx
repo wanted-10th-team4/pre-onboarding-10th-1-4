@@ -1,7 +1,5 @@
 import React from 'react';
 
 export default function Api() {
-  return (<div>
-    bbb
-    </div>);
+  return <div>bbb</div>;
 }

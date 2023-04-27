@@ -1,22 +1,12 @@
+import { useRoutes } from "react-router-dom";
 import React from 'react';
-import Api from '@api/test';
-import Test from '@components/aaa/test';
+import { routes } from './Routes';
 
-function App() {
+export default function App() {
+  const elem = useRoutes(routes);
   return (
-    <div className="App">
-      <header className="App-header">
-        <Api />
-        <Test />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-          Learn React
-        </a>
-      </header>
+    <div>
+      {elem}
     </div>
   );
 }
-
-export default App;

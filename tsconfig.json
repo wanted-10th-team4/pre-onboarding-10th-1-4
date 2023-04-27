@@ -26,5 +26,5 @@
       "@utils/*": ["src/utils/*"]
     }
   },
-  "include": ["src", "tsconfig.paths.json", "commitlint.config.js", "craco.config.ts"]
+  "include": ["src", "tsconfig.paths.json", "commitlint.config.js", "craco.config.ts", "tailwind.config.js"]
 }

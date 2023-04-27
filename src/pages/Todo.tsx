@@ -4,7 +4,7 @@ import AddTodoForm from '@components/Todo/AddTodoForm';
 import useTodo from '@hooks/useTodo';
 import withAuthRedirect from '@hoc/withAuthRedirect';
 
-function TodoPage() {
+function Todo() {
   const { todos, newTodo, handleNewTodoChange, handleNewTodoSubmit, handleDeleteTodo, handleUpdateTodo } = useTodo();
   return (
     <div className="pt-36 flex flex-col justify-center items-center text-white">
@@ -20,4 +20,4 @@ function TodoPage() {
   );
 }
 
-export default withAuthRedirect(TodoPage);
+export default withAuthRedirect(Todo);

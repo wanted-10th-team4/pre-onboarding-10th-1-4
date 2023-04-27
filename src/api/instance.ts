@@ -16,7 +16,7 @@ authInstance.defaults.baseURL = process.env.REACT_APP_API_URL;
 authInstance.interceptors.request.use(
   config => {
     // 요청을 보내기 전에 헤더에 토큰값 설정
-    const AUTH_TOKEN = localStorage.getItem('access_token');
+    const AUTH_TOKEN = localStorage.getItem('token');
     config.headers.Authorization = `Bearer ${AUTH_TOKEN}`;
 
     return config;

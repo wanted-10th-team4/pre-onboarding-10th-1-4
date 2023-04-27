@@ -2,7 +2,11 @@ import Layout from '@pages/_layout';
 import React, { lazy } from 'react';
 
 const Main = lazy(() => import('@pages/Main'));
-const TodoPage = lazy(() => import('@pages/Todo'));
+const SignIn = lazy(() => import('@pages/SignIn'));
+const SignUp = lazy(() => import('@pages/SignUp'));
+const Todo = lazy(() => import('@pages/Todo'));
+const NotFound = lazy(() => import('./pages/NotFound'));
+
 
 export const routes = [
   {
@@ -10,7 +14,10 @@ export const routes = [
     element: <Layout />,
     children: [
       { path: '/', element: <Main /> },
-      { path: '/todo', element: <TodoPage /> },
+      { path: '/signin', element: <SignIn /> },
+      { path: '/signup', element: <SignUp /> },
+      { path: '/todo', element: <Todo /> },
+      { path: '*', element: <NotFound /> },
     ],
   },
 ];

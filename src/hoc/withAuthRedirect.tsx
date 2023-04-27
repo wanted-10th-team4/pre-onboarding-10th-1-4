@@ -9,7 +9,7 @@ const withAuthRedirect = <P extends object>(WrappedComponent: ComponentType<P>):
 
     useEffect(() => {
       /* 토큰이 있는 상태일 때, /todo 경로로 리다이렉트 */
-      const token = getItem('access_token');
+      const token = getItem('token');
 
       if (token) {
         navigate('/todo');

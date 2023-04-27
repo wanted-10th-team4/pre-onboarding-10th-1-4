@@ -1,24 +1,24 @@
 /* 로그인, 회원가입 요청 및 응답 */
-export interface SignInRequestBody {
+export type SignInRequestBody = {
   email: string;
   password: string;
-}
+};
 
-export interface SignInResponse {
+export type SignInResponse = {
   success: boolean;
   message: string;
   access_token: string;
-}
+};
 
-export interface SignUpRequestBody {
+export type SignUpRequestBody = {
   email: string;
   password: string;
-}
+};
 
-export interface SignUpResponse {
+export type SignUpResponse = {
   success: boolean;
   message: string;
-}
+};
 
 /* Todo 요청 및 응답 */
 export type Todo = {

@@ -32,6 +32,7 @@
     "arrow-parens": ["error", "as-needed"],
     "no-param-reassign": ["error", { "props": false }],
     "@typescript-eslint/no-shadow": "off",
+    "react/jsx-props-no-spreading": "off",
     "no-unused-expressions": [
       "error",
       {
